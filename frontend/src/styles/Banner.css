@@ -1,0 +1,14 @@
+/* src/styles/Banner.css */
+.banner {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f4f4f4;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 1.5rem;
+  color: #555;
+}
+

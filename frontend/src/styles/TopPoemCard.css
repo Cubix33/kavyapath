@@ -1,0 +1,23 @@
+/* src/styles/TopPoemCard.css */
+.top-poem-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.top-poem-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.top-poem-card .poet-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.top-poem-card .actions button {
+  margin-right: 10px;
+}
+

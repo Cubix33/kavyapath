@@ -1,0 +1,58 @@
+/* banner.css */
+
+/* Banner Styling */
+.banner {
+  height: 100px;  /* Reduced height */
+  background: linear-gradient(to right, #6a11cb, #2575fc); /* Beautiful gradient from purple to blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.banner-content {
+  z-index: 1;
+  padding: 20px;
+}
+
+.banner-title {
+  font-size: 3rem;  /* Big, bold title */
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #ffcc00;  /* Golden color */
+}
+
+.shloka-text {
+  font-size: 2rem;  /* Medium size for the shloka */
+  font-style: italic;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);  /* Dark overlay for better text readability */
+  z-index: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .banner-title {
+    font-size: 2rem;
+  }
+
+  .shloka-text {
+    font-size: 1.5rem;
+  }
+}
+

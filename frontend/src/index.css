@@ -1,0 +1,32 @@
+/* Global Styles for Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+body.dark-mode .navbar {
+  background: #333;
+}
+
+body.dark-mode .navbar .nav-link {
+  color: white;
+}
+
+body.dark-mode .navbar .search-box {
+  background-color: #333;
+  color: white;
+}
+
+body.dark-mode .footer {
+  background: #222;
+  color: white;
+}
+
+body.dark-mode .footer .footer-link {
+  color: white;
+}
+
+body.dark-mode .footer .social-icon {
+  color: white;
+}
+
