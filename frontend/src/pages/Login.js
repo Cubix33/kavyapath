@@ -1,53 +1,58 @@
-import React, { useState } from "react";
-import { Container, Form, Button, Alert } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import "../styles/login.css";  // Import the CSS file here
+import React, { useState } from 'react';
+import '../styles/auth.css';
 
 const Login = () => {
-  const navigate = useNavigate();
-  const [formData, setFormData] = useState({ email: "", password: "" });
-  const [error, setError] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  // Handle input changes
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  // Dummy login credentials (you can change these to any values you like)
+  const dummyEmail = 'user@example.com';
+  const dummyPassword = 'password123';
 
-  // Handle login
   const handleLogin = (e) => {
     e.preventDefault();
-    // Dummy authentication check (Replace with actual backend auth)
-    if (formData.email === "user@example.com" && formData.password === "password") {
-      console.log("User Logged In:", formData);
-      navigate("/"); // Redirect to home
+    
+    // Check if entered credentials match the dummy credentials
+    if (email === dummyEmail && password === dummyPassword) {
+      console.log("लॉगिन सफल!"); // Login success
+      alert('लॉगिन सफल!');
+      // You can redirect to the homepage or user dashboard here
+      // window.location.href = '/home'; // Example redirect
     } else {
-      setError(true);
+      console.log("गलत ईमेल या पासवर्ड"); // Login failed
+      alert('गलत ईमेल या पासवर्ड');
     }
   };
 
   return (
-    <div className="login-container">
-      <Container>
-        <Form onSubmit={handleLogin} className="login-form">
-          <h2 className="login-title">🔑 लॉगिन करें</h2>
-          {error && <Alert variant="danger">❌ ईमेल या पासवर्ड गलत है!</Alert>}
-
-          <Form.Group className="mb-3">
-            <Form.Label>📧 ईमेल</Form.Label>
-            <Form.Control type="email" name="email" placeholder="अपना ईमेल दर्ज करें" onChange={handleChange} required />
-          </Form.Group>
-
-          <Form.Group className="mb-3">
-            <Form.Label>🔑 पासवर्ड</Form.Label>
-            <Form.Control type="password" name="password" placeholder="पासवर्ड दर्ज करें" onChange={handleChange} required />
-          </Form.Group>
-
-          <Button variant="success" type="submit" className="login-btn">लॉगिन करें</Button>
-
-          <p className="signup-text">नया खाता बनाएँ? <Button variant="link" onClick={() => navigate("/signup")}>साइन अप करें</Button></p>
-        </Form>
-      </Container>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h2>लॉगिन करें</h2>
+        <form onSubmit={handleLogin}>
+          <div className="input-field">
+            <label>ईमेल</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              placeholder="अपना ईमेल दर्ज करें"
+            />
+          </div>
+          <div className="input-field">
+            <label>पासवर्ड</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              placeholder="अपना पासवर्ड दर्ज करें"
+            />
+          </div>
+          <button type="submit" className="btn">लॉगिन करें</button>
+        </form>
+        <p>खाता नहीं है? <a href="/signup">साइन अप करें</a></p>
+      </div>
     </div>
   );
 };

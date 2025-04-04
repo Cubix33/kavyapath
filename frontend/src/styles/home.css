@@ -1,168 +1,84 @@
-/* =================== */
-/* Home Page Styling */
-/* =================== */
-
 .home {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-  font-family: 'Poppins', sans-serif;
+  padding: 40px;
+  font-family: "Mukta", sans-serif;
+  background: #f9f9f9;
 }
 
-/* ---- TOP POEMS SECTION ---- */
-.top-poems {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.top-poems h2 {
-  font-size: 2rem;
+h2 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
   color: #333;
-  margin-bottom: 15px;
 }
 
+/* Card Grid */
 .poem-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  justify-content: center;
 }
 
+/* Poem & Poet Cards */
 .poem-card {
   background: white;
+  padding: 20px;
   border-radius: 12px;
-  padding: 15px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
 }
 
 .poem-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Header inside cards */
 .poem-header {
   display: flex;
   align-items: center;
+  gap: 15px;
   margin-bottom: 10px;
 }
 
 .poet-pic {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  margin-right: 10px;
+  object-fit: cover;
+  border: 3px solid #28a745;
 }
 
+/* Poem Information */
 .poem-info h3 {
-  font-size: 1.2rem;
-  color: #444;
+  font-size: 18px;
   margin: 0;
 }
 
 .poem-info p {
-  font-size: 0.9rem;
+  font-size: 14px;
   color: #666;
   margin: 2px 0;
 }
 
+/* Footer Buttons */
 .poem-footer {
+  margin-top: 15px;
   display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+  gap: 10px;
 }
 
 .follow-btn, .like-btn, .share-btn {
+  background: #28a745;
+  color: white;
+  padding: 8px 14px;
   border: none;
-  padding: 8px 12px;
   border-radius: 8px;
+  font-size: 14px;
   cursor: pointer;
-  transition: background 0.3s ease;
-  font-weight: bold;
+  transition: 0.3s;
 }
 
-.follow-btn {
-  background: #ffcc00;
-  color: #333;
-}
-
-.like-btn {
-  background: #ff4d4d;
-  color: white;
-}
-
-.share-btn {
-  background: #007bff;
-  color: white;
-}
-
-.follow-btn:hover {
-  background: #e6b800;
-}
-
-.like-btn:hover {
-  background: #ff3333;
-}
-
-.share-btn:hover {
-  background: #0056b3;
-}
-
-/* ---- DID YOU KNOW SECTION ---- */
-.did-you-know {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  margin-top: 30px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.did-you-know h2 {
-  font-size: 1.8rem;
-  color: #222;
-  margin-bottom: 10px;
-}
-
-.did-you-know p {
-  font-size: 1.2rem;
-  color: #555;
-  font-style: italic;
-}
-
-/* ---- MOST LIKED WRITERS ---- */
-.most-liked-writers {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.most-liked-writers h2 {
-  font-size: 1.8rem;
-  color: #222;
-  margin-bottom: 10px;
-}
-
-.most-liked-writers ul {
-  list-style: none;
-  padding: 0;
-}
-
-.most-liked-writers li {
-  background: white;
-  margin: 8px auto;
-  padding: 10px;
-  width: 200px;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  color: #333;
-  font-weight: bold;
-  transition: background 0.3s ease;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.most-liked-writers li:hover {
-  background: #ffcc00;
-  color: #222;
+.follow-btn:hover, .like-btn:hover, .share-btn:hover {
+  background: #20c997;
 }
 

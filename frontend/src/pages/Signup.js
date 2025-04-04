@@ -1,56 +1,82 @@
-import React, { useState } from "react";
-import { Container, Form, Button, Alert } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import '../styles/auth.css'; // Make sure to use the correct path to your CSS file
 
 const Signup = () => {
-  const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
+  const [name, setName] = useState('');
+  const [location, setLocation] = useState('');
+  const [dob, setDob] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
-  // Handle input changes
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSignup = (e) => {
     e.preventDefault();
-    console.log("User Signed Up:", formData);
-    setSubmitted(true);
-    setTimeout(() => navigate("/login"), 2000); // Redirect to login after 2 sec
+    if (password !== confirmPassword) {
+      alert("पासवर्ड और पुष्टि पासवर्ड मेल नहीं खाते");
+      return;
+    }
+    // Handle the signup logic here (e.g., save user data)
+    console.log("साइन-अप किया गया", { name, location, dob, password });
   };
 
   return (
-    <Container className="mt-4">
-      <h2 className="text-center">🔐 साइन अप करें</h2>
-      {submitted && <Alert variant="success">✅ सफलतापूर्वक साइन अप हो गया!</Alert>}
-
-      <Form onSubmit={handleSubmit} className="p-4 shadow rounded bg-light">
-        <Form.Group className="mb-3">
-          <Form.Label>👤 नाम</Form.Label>
-          <Form.Control type="text" name="name" placeholder="अपना नाम दर्ज करें" onChange={handleChange} required />
-        </Form.Group>
-
-        <Form.Group className="mb-3">
-          <Form.Label>📧 ईमेल</Form.Label>
-          <Form.Control type="email" name="email" placeholder="अपना ईमेल दर्ज करें" onChange={handleChange} required />
-        </Form.Group>
-
-        <Form.Group className="mb-3">
-          <Form.Label>🔑 पासवर्ड</Form.Label>
-          <Form.Control type="password" name="password" placeholder="पासवर्ड दर्ज करें" onChange={handleChange} required />
-        </Form.Group>
-
-        <Button variant="primary" type="submit">साइन अप करें</Button>
-      </Form>
-
-      <p className="text-center mt-3">पहले से खाता है? <Button variant="link" onClick={() => navigate("/login")}>लॉगिन करें</Button></p>
-    </Container>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h2>साइन अप करें</h2>
+        <form onSubmit={handleSignup}>
+          <div className="input-field">
+            <label>पूरा नाम</label>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              placeholder="अपना पूरा नाम दर्ज करें"
+            />
+          </div>
+          <div className="input-field">
+            <label>स्थान</label>
+            <input
+              type="text"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              required
+              placeholder="अपना स्थान दर्ज करें"
+            />
+          </div>
+          <div className="input-field">
+            <label>जन्मतिथि</label>
+            <input
+              type="date"
+              value={dob}
+              onChange={(e) => setDob(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input-field">
+            <label>पासवर्ड</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              placeholder="पासवर्ड दर्ज करें"
+            />
+          </div>
+          <div className="input-field">
+            <label>पासवर्ड पुष्टि करें</label>
+            <input
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+              placeholder="पासवर्ड फिर से दर्ज करें"
+            />
+          </div>
+          <button type="submit" className="btn">साइन अप करें</button>
+        </form>
+        <p>पहले से खाता है? <a href="/login">लॉगिन करें</a></p>
+      </div>
+    </div>
   );
 };
 

@@ -1,17 +1,67 @@
-/* src/styles/SubmitPoem.css */
-.submit-poem {
-  padding: 2rem;
+.submit-poem-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  padding: 20px;
 }
 
-.submit-poem input, .submit-poem select {
-  margin: 10px 0;
-  padding: 10px;
+.submit-poem-card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
 }
 
-.submit-poem button {
-  background-color: #333;
-  color: white;
-  padding: 10px;
+.submit-poem-card h2 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  margin-bottom: 20px;
+}
+
+.input-field label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.input-field input, .input-field select, .input-field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.input-field textarea {
+  min-height: 100px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff8c00;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  color: #fff;
   cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #e07b00;
+}
+
+.submit-btn:focus {
+  outline: none;
 }
 

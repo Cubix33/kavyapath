@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaMoon, FaSun } from "react-icons/fa";  // For dark mode icon
-import '../styles/Navbar.css';  // Correct the path to the CSS file
+import { FaMoon, FaSun } from "react-icons/fa";  // Icons for dark mode
+import '../styles/Navbar.css';  // Corrected CSS path
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -21,37 +21,40 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${darkMode ? "dark" : "light"}`}>
       <div className="logo">
-        <h1>Kavyapath</h1>
+        <h1>📖 काव्यपथ</h1>
       </div>
       <ul className="nav-links">
         <li>
-          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/" className="nav-link">🏠 होम</Link>
         </li>
         <li>
-          <Link to="/categories" className="nav-link">Categories</Link>
+          <Link to="/categories" className="nav-link">📚 श्रेणियाँ</Link>
         </li>
+	  <li>
+	  <Link to= "/submit-poem" className="nav-link"> 📜कविता सबमिट करें </Link>
+	  </li>
         <li>
           {isLoggedIn ? (
             <>
-              <Link to="/submit-poem" className="nav-link">Submit Poem</Link>
-              <Link to="/profile" className="nav-link">User Profile</Link>
+              <Link to="/submit-poems" className="nav-link">📝 कविता सबमिट करें</Link>
+              <Link to="/profile" className="nav-link">👤 प्रोफ़ाइल</Link>
             </>
           ) : (
-            <Link to="/login" className="nav-link">Login/Signup</Link>
+            <Link to="/login" className="nav-link">🔑 लॉगिन / साइनअप</Link>
           )}
         </li>
         <li>
           <input
             type="text"
             className="search-box"
-            placeholder="Search poems or poets..."
+            placeholder="🔍 कविताएँ या कवि खोजें..."
             value={searchQuery}
             onChange={handleSearchChange}
           />
         </li>
         <li>
           <button className="dark-mode-toggle" onClick={handleDarkModeToggle}>
-            {darkMode ? <FaSun size={20} color="#ffab00" /> : <FaMoon size={20} />}
+            {darkMode ? <FaSun size={22} color="#f9a825" /> : <FaMoon size={22} color="#ddd" />}
           </button>
         </li>
       </ul>

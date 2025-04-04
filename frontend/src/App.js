@@ -8,15 +8,21 @@ import SubmitPoem from './pages/SubmitPoem';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Home from './pages/Home'; // You can create a Home component as well
-import './styles/App.css';
+import './App.css'
 import './styles/Navbar.css';
 import './styles/Banner.css';
 import './styles/Footer.css';
 import './styles/Categories.css';
 import './styles/SubmitPoem.css';
+import './styles/auth.css'
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Assume user is not logged in initially
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+  const [isDarkMode, setIsDarkMode] = useState(false); 
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode); 
+  };
 
   return (
     <Router>
